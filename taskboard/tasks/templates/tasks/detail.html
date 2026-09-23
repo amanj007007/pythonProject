@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ task.title }}</title>
+</head>
+
+<body>
+
+    <h1>{{ task.title }}</h1>
+
+    <p>
+        Status:
+        {% if task.done %}
+            ✅ Done
+        {% else %}
+            ⏳ Pending
+        {% endif %}
+    </p>
+
+    <p>
+        Created:
+        {{ task.created_at }}
+    </p>
+
+    <p>
+        Due date:
+        {% if task.due_date %}
+            {{ task.due_date }}
+        {% else %}
+            No due date
+        {% endif %}
+    </p>
+
+    <a href="/">← Back to Task Board</a>
+
+</body>
+
+</html>

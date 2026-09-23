@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task Board</title>
+</head>
+
+<body>
+
+    <h1>My Tasks</h1>
+
+    <ul>
+        {% for task in tasks %}
+            <li>
+                {{ task.title }} -
+                {% if task.done %}
+                    ✅ done
+                {% else %}
+                    ⏳ pending
+                {% endif %}
+            </li>
+
+        {% empty %}
+            <li>No tasks yet. Add some in the admin!</li>
+        {% endfor %}
+    </ul>
+
+</body>
+
+</html>
